@@ -1,0 +1,50 @@
+{
+  "name": "banco-front",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@hookform/resolvers": "^3.1.0",
+    "axios": "^1.4.0",
+    "emailjs-com": "^3.2.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.29",
+    "jwt-decode": "^3.1.2",
+    "leaflet": "^1.9.4",
+    "mdb-react-ui-kit": "^6.1.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
+    "react-carousel-minimal": "^1.4.1",
+    "react-dom": "^18.2.0",
+    "react-image": "^4.1.0",
+    "react-leaflet": "^4.2.1",
+    "react-multi-carousel": "^2.8.4",
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^6.11.2",
+    "react-scroll": "^1.8.9",
+    "react-slick": "^0.29.0",
+    "recharts": "^2.6.2",
+    "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.7.10",
+    "validate-js": "^2.0.1",
+    "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "vite": "^4.3.2"
+  }
+}
