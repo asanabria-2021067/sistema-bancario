@@ -16,10 +16,20 @@ export const CuentaCredito = () => {
   return (
     <>
       <NavBar />
+      <div
+        style={{
+          textAlign: "center",
+          opacity: "100%",
+          marginBottom: "20px",
+          backgroundColor: "#004906",
+          color: "#FFFFFF",
+          paddingBottom: "1px",
+          paddingTop: "15px"
+        }}
+      >
+        <h1 class="display-4 font-weight-bold mb-4" id="">Mis cuentas</h1>
+      </div>
       <div className="container containerCuentas">
-      <div className="title-container">
-          <h1 className="h1">Mis Cuentas</h1>
-        </div>
         <div className="account-list">
           {misCuentas.map((c) => {
             if (c.tipoCuenta.tipo === "Plazo Fijo") {

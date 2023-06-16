@@ -29,9 +29,21 @@ export const Historial = () => {
   return (
     <>
       <NavBar />
+      <div
+        style={{
+          textAlign: "center",
+          opacity: "100%",
+          marginBottom: "20px",
+          backgroundColor: "#004906",
+          color: "#FFFFFF",
+          paddingBottom: "1px",
+          paddingTop: "15px"
+        }}
+      >
+        <h1 class="display-4 font-weight-bold mb-4" id="">Historial</h1>
+      </div>
       <div className="container">
         <div className="account-history">
-          <h2 className="h1 account-history-title mb-4">Historial de Cuenta</h2>
           <Table striped bordered hover className="account-history-table">
           <thead>
   <tr>

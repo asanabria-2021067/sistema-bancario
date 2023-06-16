@@ -8,10 +8,21 @@ export const Principal = () => {
   return (
     <>
     <NavBar/>
+    <div
+        style={{
+          textAlign: "center",
+          opacity: "100%",
+          marginBottom: "20px",
+          backgroundColor: "#004906",
+          color: "#FFFFFF",
+          paddingBottom: "1px",
+          paddingTop: "15px"
+        }}
+      >
+        <h1 class="display-4 font-weight-bold mb-4" id="">Banco de Bosques</h1>
+      </div>
       <div className="banca-virtual">
-        <header className="banca-virtual-header">
-          <h1>Banco de Bosques</h1>
-        </header>
+        
         <div className="container">
           <div className="row">
             <div className="cards">

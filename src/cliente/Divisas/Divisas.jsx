@@ -54,10 +54,20 @@ export const Divisas = () => {
   return (
     <>
       <NavBar />
+      <div
+        style={{
+          textAlign: "center",
+          opacity: "100%",
+          marginBottom: "20px",
+          backgroundColor: "#004906",
+          color: "#FFFFFF",
+          paddingBottom: "1px",
+          paddingTop: "15px"
+        }}
+      >
+        <h1 class="display-4 font-weight-bold mb-4" id="">Conversor de divisas</h1>
+      </div>
       <div className="container mt-4 mb-4">
-      <div className="title-container">
-          <h1 className="h1 mb-3">Conversor Divisas</h1>
-        </div>
         <div className="currency-converter mt-2">
           <div className="input-group">
             <label className="labelDivisas">Moneda de conversión</label>

@@ -32,10 +32,10 @@ export const Transferencia = () => {
     // RECEPTOR
     console.log("SE ENVIO EL RECEPTOR");
     const getUsuarios = await apiDatos(transferenciaData.noCuenta);
-    if(getUsuarios){
-    setReceptor(getUsuarios);
-    }else{
-      
+    if (getUsuarios) {
+      setReceptor(getUsuarios);
+    } else {
+
       Swal.fire({
         icon: "error",
         title: "error",
@@ -127,6 +127,19 @@ export const Transferencia = () => {
   return (
     <>
       <NavBar />
+      <div
+        style={{
+          textAlign: "center",
+          opacity: "100%",
+          marginBottom: "20px",
+          backgroundColor: "#004906",
+          color: "#FFFFFF",
+          paddingBottom: "1px",
+          paddingTop: "15px"
+        }}
+      >
+        <h1 class="display-4 font-weight-bold mb-4" id="">Transferencias</h1>
+      </div>
       <div className="container mt-4 mb-4">
         <div className="transfer-container mt-4">
           <div
@@ -147,8 +160,8 @@ export const Transferencia = () => {
               />
             </div>
             <div>
-            <h5 className="mt-4"><strong>Usuario emisor:</strong> {usuario.nombreUsuario}</h5>
-            <p className="mb-4" style={{color:"white"}}><strong>Saldo:</strong> Q.{misCuentas.saldo}</p>
+              <h5 className="mt-4"><strong>Usuario emisor:</strong> {usuario.nombreUsuario}</h5>
+              <p className="mb-4" style={{ color: "white" }}><strong>Saldo:</strong> Q.{misCuentas.saldo}</p>
             </div>
             <div className="input-container">
               <label className="labelTransferencia" htmlFor="accountNumber">

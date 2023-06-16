@@ -122,10 +122,20 @@ export const Favoritos = () => {
   return (
     <>
       <NavBar />
+      <div
+        style={{
+          textAlign: "center",
+          opacity: "100%",
+          marginBottom: "20px",
+          backgroundColor: "#004906",
+          color: "#FFFFFF",
+          paddingBottom: "1px",
+          paddingTop: "15px"
+        }}
+      >
+        <h1 class="display-4 font-weight-bold mb-4" id="">Lista de favoritos</h1>
+      </div>
       <div className="container mt-4">
-        <div className="title-container">
-          <h1 className="h1">Lista de favoritos</h1>
-        </div>
         <div className="d-flex justify-content-start align-items-center mb-3">
           <Button
             className="btnOpciones btn-primary mr-2"

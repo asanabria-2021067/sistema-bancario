@@ -20,12 +20,23 @@ export const CuentasVista = () => {
   return (
     <>
       <NavBar />
+      <div
+        style={{
+          textAlign: "center",
+          opacity: "100%",
+          marginBottom: "20px",
+          backgroundColor: "#004906",
+          color: "#FFFFFF",
+          paddingBottom: "1px",
+          paddingTop: "15px"
+        }}
+      >
+        <h1 class="display-4 font-weight-bold mb-4" id="">Listado de cuentas</h1>
+      </div>
       <Container>
         <Row className="mt-5">
           <Col>
-          <div className="title-container">
-          <h1 className="h1">Mis Cuentas</h1>
-        </div>
+            
           </Col>
         </Row>
         <Row className="mt-3">
