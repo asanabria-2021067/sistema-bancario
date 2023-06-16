@@ -54,13 +54,16 @@ export const ListaUsuarios = () => {
             <div style={{ marginLeft: "10%" }}>
                 <div
                     style={{
-                        backgroundColor: "#f8f7f6",
                         textAlign: "center",
                         opacity: "100%",
                         marginBottom: "20px",
+                        paddingTop: "20px",
+                        backgroundColor: "#004906",
+                        color: "#FFFFFF",
+                        paddingBottom: "1px"
                     }}
                 >
-                    <h1 style={{ opacity: "100%" }}>Lista de Usuario</h1>
+                    <h1 class="display-4 font-weight-bold mb-4" id="">Usuario</h1>
                 </div>
                 <Link to="/agregarUsuario" className="nav-link" aria-current="page">
                     <div
@@ -68,13 +71,13 @@ export const ListaUsuarios = () => {
                         style={{ marginBottom: "10px" }}
                     >
                         <button className="btn btn-success" type="button">
-                        <i className="fa fa-save mx-2"></i>Agregar Usuario
+                            <i className="fa fa-save mx-2"></i>Agregar Usuario
                         </button>
                     </div>
                 </Link>
                 <div className="container">
                     <Table striped bordered hover>
-                        <thead style={{ backgroundColor: "#FAD7A0" }} className="text-center">
+                        <thead style={{ backgroundColor: "#AEAEAE" }} className="text-center">
                             <tr>
                                 <th>Nombre:</th>
                                 <th>Nombre de Usuario:</th>
@@ -102,12 +105,12 @@ export const ListaUsuarios = () => {
 
                                         <td>
                                             <div className="d-grid gap-2">
-                                            <Button variant="warning" size="sm"
-                                                onClick={() => handleOpenModal(t)}
-                                                style={{ backgroundColor: "#F7DC6F", border: "none" }}
-                                            >
-                                                <i className="fa fa-user mx-2"></i>Editar
-                                            </Button>
+                                                <Button variant="warning" size="sm"
+                                                    onClick={() => handleOpenModal(t)}
+                                                    style={{ backgroundColor: "#F7DC6F", border: "none" }}
+                                                >
+                                                    <i className="fa fa-user mx-2"></i>Editar
+                                                </Button>
                                                 <Button
                                                     variant="danger"
                                                     size="sm"
@@ -126,10 +129,10 @@ export const ListaUsuarios = () => {
                         })}
                     </Table>
                     <UpdateUsuarios
-                    listaUsuarios={usuario}
-                    isOpen={showModal}
-                    onClose={() => handleCloseModal()}
-                ></UpdateUsuarios>
+                        listaUsuarios={usuario}
+                        isOpen={showModal}
+                        onClose={() => handleCloseModal()}
+                    ></UpdateUsuarios>
                 </div>
                 <br /><br />
             </div>

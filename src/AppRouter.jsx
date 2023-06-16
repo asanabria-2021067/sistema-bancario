@@ -33,6 +33,7 @@ import { AgregarCuenta } from './administrador/cuenta/components/AgregarCuenta'
 import { ListaBancos } from './administrador/bancos/components/ListaBancos'
 import { CreateBancos } from './administrador/bancos/components/CreateBancos'
 import { HistorialAdmin } from './administrador/Historial/HistorialAdmin'
+import { FooterCliente } from './cliente/FooterCliente'
 
 
 
@@ -82,6 +83,7 @@ function AppRouter() {
         <Route path="/agregarBancos" element={isAdmin() ? <CreateBancos/> : <Navigate to="/" />} />
 
     </Routes>
+
     </>
   )
 }

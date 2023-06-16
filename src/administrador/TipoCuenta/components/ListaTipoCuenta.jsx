@@ -12,7 +12,7 @@ export const ListaTipoCuenta = () => {
     const navigate = useNavigate();
 
     const handleCloseModal = () => {
-        setShowModal(false); 
+        setShowModal(false);
     }
 
     const viewTipoCuenta = async () => {
@@ -54,13 +54,16 @@ export const ListaTipoCuenta = () => {
         <div style={{ marginLeft: " 10%" }}>
             <div
                 style={{
-                    backgroundColor: " #f8f7f6",
                     textAlign: "center",
                     opacity: "100%",
                     marginBottom: "20px",
+                    paddingTop: "20px",
+                    backgroundColor: "#004906",
+                    color: "#FFFFFF",
+                    paddingBottom: "1px"
                 }}
             >
-                <h1 style={{ opacity: "100%" }}>Lista de tipo de Cuenta</h1>
+                <h1 class="display-4 font-weight-bold mb-4" id="">Tipo Cuenta</h1>
             </div>
 
             <Link to="/agregarTipoCuentaAdmin    " className="nav-link " aria-current="page">
@@ -78,10 +81,10 @@ export const ListaTipoCuenta = () => {
                     </button>
                 </div>
             </Link>
-            
+
             <div className="container">
                 <Table striped bordered hover>
-                    <thead style={{ backgroundColor: "#FAD7A0" }} className="text-center">
+                    <thead style={{ backgroundColor: "#AEAEAE" }} className="text-center">
                         <tr>
                             <th>ID</th>
                             <th>TIPO</th>
@@ -105,7 +108,7 @@ export const ListaTipoCuenta = () => {
                                                     eliminar(c._id);
                                                 }}
                                             >
-                                               <i className="fa fa-trash mx-2"></i> Eliminar
+                                                <i className="fa fa-trash mx-2"></i> Eliminar
                                             </Button>
                                         </div>
                                     </td>

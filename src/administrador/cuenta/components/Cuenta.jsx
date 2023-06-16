@@ -52,8 +52,18 @@ export const Cuenta = () => {
 
   return (
     <div style={{ marginLeft: "10%" }}>
-      <div style={{ backgroundColor: "#f8f7f6", textAlign: "center", opacity: "100%", marginBottom: "20px" }}>
-        <h1 style={{ opacity: "100%" }}>Listado de Cuentas</h1>
+        <div
+        style={{
+          textAlign: "center",
+          opacity: "100%",
+          marginBottom: "20px",
+          paddingTop:"20px",
+          backgroundColor: "#004906",
+          color: "#FFFFFF",
+          paddingBottom: "1px"
+        }}
+      >
+        <h1 class="display-4 font-weight-bold mb-4" id="">Cuentas</h1>
       </div>
 
       <Link to="/agregar-cuenta" className="nav-link" aria-current="page">
@@ -66,7 +76,7 @@ export const Cuenta = () => {
 
       <div className="container">
         <Table striped bordered hover>
-          <thead style={{ backgroundColor: "#FAD7A0" }} className="text-center">
+          <thead style={{ backgroundColor: "#AEAEAE" }} className="text-center">
             <tr>
               <th>ID</th>
               <th>Número de Cuenta</th>

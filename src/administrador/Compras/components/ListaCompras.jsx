@@ -38,40 +38,43 @@ export const ListaCompras = () => {
     try {
       // Mostrar mensaje de confirmación
       const confirmacion = await Swal.fire({
-          title: "¿Estás seguro?",
-          text: "Esta acción eliminará la compra permanentemente.",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonText: "Sí",
-          cancelButtonText: "No",
+        title: "¿Estás seguro?",
+        text: "Esta acción eliminará la compra permanentemente.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Sí",
+        cancelButtonText: "No",
       });
 
       if (confirmacion.isConfirmed) {
-           await DeleteTarea(id);
-          setCompras(compras.filter((c) => c._id !== id));
-          Swal.fire({
-              icon: "success",
-              title: "Genial!",
-              text: "Se eliminó la compra correctamente!",
-          });
+        await DeleteTarea(id);
+        setCompras(compras.filter((c) => c._id !== id));
+        Swal.fire({
+          icon: "success",
+          title: "Genial!",
+          text: "Se eliminó la compra correctamente!",
+        });
       }
-  } catch (error) {
+    } catch (error) {
       console.log("Error al eliminar la cuenta:", error.message);
-  }
-};
+    }
+  };
 
 
   return (
     <div style={{ marginLeft: " 10%" }}>
       <div
         style={{
-          backgroundColor: " #f8f7f6",
           textAlign: "center",
           opacity: "100%",
           marginBottom: "20px",
+          paddingTop:"20px",
+          backgroundColor: "#004906",
+          color: "#FFFFFF",
+          paddingBottom: "1px"
         }}
       >
-        <h1 style={{ opacity: "100%" }}>Lista de Compras</h1>
+        <h1 class="display-4 font-weight-bold mb-4" id="">Compras</h1>
       </div>
       <Link to="/agregar" className="nav-link " aria-current="page">
         <div
@@ -79,13 +82,13 @@ export const ListaCompras = () => {
           style={{ marginBottom: "10px" }}
         >
           <button className="btn btn-success" type="button">
-          <i className="fa fa-save mx-2"></i>Agregar Compra
+            <i className="fa fa-save mx-2"></i>Agregar Compra
           </button>
         </div>
       </Link>
       <div className="container">
         <Table striped bordered hover>
-          <thead style={{ backgroundColor: "#FAD7A0" }} className="text-center">
+          <thead style={{ backgroundColor: "#AEAEAE" }} className="text-center">
             <tr>
               <th>ID</th>
               <th>Usuario</th>
@@ -114,7 +117,7 @@ export const ListaCompras = () => {
                         }}
                         style={{ backgroundColor: "#CD5C5C", border: "none" }}
                       >
-                       <i className="fa fa-trash mx-2"></i> Eliminar
+                        <i className="fa fa-trash mx-2"></i> Eliminar
                       </Button>
                     </div>
                   </td>

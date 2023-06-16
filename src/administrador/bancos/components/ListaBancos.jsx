@@ -29,6 +29,7 @@ export const ListaBancos = () => {
         viewBanco();
     }, [
         // showModal
+        //Villeda Mula
     ]);
 
     const eliminar = async (id) => {
@@ -44,7 +45,7 @@ export const ListaBancos = () => {
             });
 
             if (confirmacion.isConfirmed) {
-                 await apiDeleteBanco(id);
+                await apiDeleteBanco(id);
                 setListaBancos(listaBancos.filter((c) => c._id !== id));
                 Swal.fire({
                     icon: "success",
@@ -62,8 +63,18 @@ export const ListaBancos = () => {
     return (
         <>
             <div style={{ marginLeft: " 10%" }}>
-                <div style={{ backgroundColor: " #f8f7f6", textAlign: "center", opacity: '100%', marginBottom: "20px" }}>
-                    <h1 style={{ opacity: "100%" }}>Lista de Bancos</h1>
+                <div
+                    style={{
+                        textAlign: "center",
+                        opacity: "100%",
+                        marginBottom: "20px",
+                        paddingTop: "20px",
+                        backgroundColor: "#004906",
+                        color: "#FFFFFF",
+                        paddingBottom: "1px"
+                    }}
+                >
+                    <h1 class="display-4 font-weight-bold mb-4" id="">Bancos</h1>
                 </div>
                 <Link
                     to="/agregarBancos"

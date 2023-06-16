@@ -52,20 +52,23 @@ export const ListaTransferencia = () => {
         <div style={{ marginLeft: "10%" }}>
             <div
                 style={{
-                    backgroundColor: "#f8f7f6",
                     textAlign: "center",
                     opacity: "100%",
                     marginBottom: "20px",
+                    paddingTop: "20px",
+                    backgroundColor: "#004906",
+                    color: "#FFFFFF",
+                    paddingBottom: "1px"
                 }}
             >
-                <h1 style={{ opacity: "100%" }}>Lista de Transferencias</h1>
+                <h1 class="display-4 font-weight-bold mb-4" id="">Transferencia</h1>
             </div>
-         
+
             <div className="container">
                 <Table striped bordered hover>
-                    <thead style={{ backgroundColor: "#FAD7A0" }} className="text-center">
+                    <thead style={{ backgroundColor: "#AEAEAE" }} className="text-center">
                         <tr>
-                        <th>ID</th>
+                            <th>ID</th>
                             <th>Emisor</th>
                             <th>noCuentaEmisor</th>
                             <th>noCuenta</th>
@@ -79,7 +82,7 @@ export const ListaTransferencia = () => {
                         return (
                             <tbody key={c._id} className="text-center">
                                 <tr>
-                                <td >{c._id}</td>
+                                    <td >{c._id}</td>
                                     <td> {c.emisor.nombreUsuario}</td>
                                     <td> {c.noCuentaEmisor}</td>
                                     <td> {c.noCuenta}</td>
@@ -87,15 +90,15 @@ export const ListaTransferencia = () => {
                                     <td> {c.monto}</td>
                                     <td> {c.concepto}</td>
                                     <td> {c.fecha}</td>
-                                    
 
-                                   
+
+
                                 </tr>
                             </tbody>
                         );
                     })}
                 </Table>
-               
+
             </div>
             <br /><br />
         </div>

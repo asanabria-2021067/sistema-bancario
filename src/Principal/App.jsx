@@ -7,6 +7,7 @@ import { Contacto } from './components/Contacto'
 import { Footer } from './components/Footer'
 import '../Principal/principal.css'
 
+
 export const App = () => {
   return (
     <>

@@ -59,24 +59,27 @@ export const ListaDeposito = () => {
         <div style={{ marginLeft: " 10%" }}>
             <div
                 style={{
-                    backgroundColor: " #f8f7f6",
                     textAlign: "center",
                     opacity: "100%",
                     marginBottom: "20px",
+                    paddingTop: "20px",
+                    backgroundColor: "#004906",
+                    color: "#FFFFFF",
+                    paddingBottom: "1px"
                 }}
             >
-                <h1 style={{ opacity: "100%" }}>Lista de Depositos</h1>
+                <h1 class="display-4 font-weight-bold mb-4" id="">Deposito</h1>
             </div>
             <Link to="/agregarTipo    " className="nav-link " aria-current="page">
                 <div
                     className="d-grid gap-2 col-6 mx-auto"
                     style={{ marginBottom: "10px" }}
                 >
-                     <button className="btn btn-success" type="button"
+                    <button className="btn btn-success" type="button"
                         onClick={(event) => {
                             event.preventDefault();
                             navigate("/agregarDepositos");
-                          }}
+                        }}
                     >
                         <i className="fa fa-save mx-2"></i>Agregar Deposito
                     </button>
@@ -84,7 +87,7 @@ export const ListaDeposito = () => {
             </Link>
             <div className="container">
                 <Table striped bordered hover>
-                    <thead style={{ backgroundColor: "#FAD7A0" }} className="text-center">
+                    <thead style={{ backgroundColor: "#AEAEAE" }} className="text-center">
                         <tr>
                             <th>ID</th>
                             <th>noCuenta</th>

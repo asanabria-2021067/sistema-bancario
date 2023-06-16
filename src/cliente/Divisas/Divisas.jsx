@@ -62,9 +62,11 @@ export const Divisas = () => {
           <div className="input-group">
             <label className="labelDivisas">Moneda de conversión</label>
             <select
-              className="selectDivisas"
+              className="form-select"
+              id="selectDivisas"
               value={baseCurrency}
               onChange={handleBaseCurrencyChange}
+              placeholder="Seleccionar moneda"
             >
               <option value="">Seleccionar moneda</option>
               <option value="USD">USD</option>
@@ -104,9 +106,12 @@ export const Divisas = () => {
           <div className="input-group">
             <label className="labelDivisas">Moneda a convertir:</label>
             <select
-              className="selectDivisas"
+              className="form-select"
+              id="selectDivisas"
               value={targetCurrency}
               onChange={handleTargetCurrencyChange}
+              placeholder="Seleccionar moneda"
+
             >
               <option value="">Seleccionar moneda</option>
               <option value="USD">USD</option>
@@ -147,12 +152,16 @@ export const Divisas = () => {
             <label className="labelDivisas">Monto:</label>
             <input
               type="number"
-              className="selectDivisas"
+              className="form-control"
+              typeof="number"
+              placeholder="Ingrese el monto a convertir"
+              id="selectDivisas"
               value={amount}
               onChange={handleAmountChange}
               step="0.01"
             />
           </div>
+          <br />  
           {convertedAmount !== 0 && (
             <p className="conversion-result">
               Monto convertido: {amount} {baseCurrency} ={" "}
