@@ -69,8 +69,7 @@ export const MiPerfil = () => {
                     id="img"
                     src={usuario.img}
                     alt="avatar"
-                    className="rounded-circle"
-                    style={{ width: "150px" }}
+                    className="avatar rounded-circle"
                     fluid
                   />
 

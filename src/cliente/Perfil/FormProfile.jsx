@@ -72,7 +72,7 @@ console.log(state);
       </div>
       <div className="container text-center">
         <button id="btn-enviar" type="submit" className="btn">
-          Enviar
+          <i className="fa fa-save mx-4"></i>Enviar
         </button>
       </div>
     </form>

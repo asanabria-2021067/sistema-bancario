@@ -8,6 +8,7 @@ import {
 import { useParams } from "react-router-dom";
 import { Card, Col, Row, Button, Modal, Form } from "react-bootstrap";
 import Swal from "sweetalert2";
+import * as Yup from "yup";
 import { NavBar } from "../NavbarCliente";
 
 export const Favoritos = () => {
@@ -40,32 +41,51 @@ export const Favoritos = () => {
     setShowModal(false);
   };
 
-  const handleFormSubmit = () => {
-    const agregarFav = agregarFavorito(favoritos._id, noCuentaEmisor, nickname);
-    if (agregarFav) {
-      Swal.fire({
-        icon: "success",
-        title: "Se agregó un nuevo favorito",
-        text: "Has agregado un nuevo favorito",
-        confirmButtonText: "Ok",
-      }).then(() => {
-        window.location.reload(); // Recargar la página
+  const handleFormSubmit = async () => {
+    try {
+      const schema = Yup.object().shape({
+        noCuentaEmisor: Yup.string().required("El número de cuenta del emisor es obligatorio"),
+        nickname: Yup.string().required("El nickname es obligatorio"),
       });
-    } else {
+  
+      await schema.validate({ noCuentaEmisor, nickname });
+  
+      const agregarFav = agregarFavorito(favoritos._id, noCuentaEmisor, nickname);
+      if (agregarFav) {
+        Swal.fire({
+          icon: "success",
+          title: "Se agregó un nuevo favorito",
+          text: "Has agregado un nuevo favorito",
+          confirmButtonText: "Ok",
+        }).then(() => {
+          window.location.reload(); // Recargar la página
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          confirmButtonText: "Ok",
+        });
+      }
+      handleModalClose();
+    } catch (error) {
       Swal.fire({
         icon: "error",
         title: "Error",
+        text: error.message,
         confirmButtonText: "Ok",
       });
     }
-    handleModalClose();
   };
 
   const handleEliminarLista = async () => {
     const confirmacion = await Swal.fire({
-      icon: "success",
-      title: "Estás seguro de eliminar toda la lista?",
-      confirmButtonText: "Ok",
+      title: '¿Estás seguro?',
+      text: 'Esta acción eliminará la cuenta permanentemente.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí',
+      cancelButtonText: 'No',
     });
 
     if (confirmacion.isConfirmed) {
@@ -93,9 +113,12 @@ export const Favoritos = () => {
 
   const handleEliminarFavorito = async (c) => {
     const confirmacion = await Swal.fire({
-      icon: "success",
-      title: "Estás seguro de eliminar este registro?",
-      confirmButtonText: "Ok",
+      title: '¿Estás seguro?',
+      text: 'Esta acción eliminará la cuenta permanentemente.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí',
+      cancelButtonText: 'No',
     });
 
     if (confirmacion.isConfirmed) {
@@ -122,10 +145,21 @@ export const Favoritos = () => {
   return (
     <>
       <NavBar />
-      <div className="container mt-4">
-        <div className="title-container">
-          <h1 className="h1">Lista de favoritos</h1>
+      <div
+        style={{
+          textAlign: "center",
+          opacity: "100%",
+          marginBottom: "20px",
+          backgroundColor: "#004906",
+          color: "#FFFFFF",
+          paddingBottom: "1px",
+          paddingTop: "15px"
+        }}
+      >
+          <h1 className="mb-4">Lista de favoritos</h1>
         </div>
+      <div className="container mt-4">
+      
         <div className="d-flex justify-content-start align-items-center mb-3">
           <Button
             className="btnOpciones btn-primary mr-2"
@@ -180,10 +214,11 @@ export const Favoritos = () => {
                   </Card.Body>
                   <Card.Footer>
                     <Button
+                    className="btnCancel"
                       variant="danger"
                       onClick={() => handleEliminarFavorito(c)}
                     >
-                      Eliminar
+                      <i className="fa fa-trash mx-2"></i>Eliminar
                     </Button>
                   </Card.Footer>
                 </Card>

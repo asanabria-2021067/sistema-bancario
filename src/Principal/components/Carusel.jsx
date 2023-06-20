@@ -3,7 +3,7 @@ import { Carousel } from "react-bootstrap";
 import { data } from './imagesCarusel/Data';
 
 export const Carusel = () => {
-  const interval = 5000;
+  const interval = 4000;
 
   return (
     <>

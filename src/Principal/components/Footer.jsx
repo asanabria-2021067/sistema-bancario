@@ -3,42 +3,51 @@ import React from 'react'
 export const Footer = () => {
     return (
         <>
+            <footer className="footer-distributed">
 
-        
-            <footer className="pie-pagina">
-                <div className="texto-1">
-                    <div className="textoFooter">
+                    <img
+                        src="https://bancodebosques.org/wp-content/uploads/2021/09/bdb-logo.svg"
+                        style={{ width: "15%" , marginRight: "20%", paddingBlock: "2.8%"}}
+                        alt="Banco de Bosques"
+                    />
+             
 
-                        <figure>
-                            <a href="#"><img alt="Not Found" /></a>
-                        </figure>
+                <div className="footer-center">
 
+                    <div>
+                        <i className="fa fa-map-marker"></i>
+                        <p><span>6A Avenida 13-54</span> Cdad. de Guatemala 01007</p>
                     </div>
 
-                    <div className="textoFooter">
-                        <h2 className="h2-ubi">Ubicación</h2>
-
+                    <div>
+                        <i className="fa fa-phone"></i>
+                        <p>  (+ 502) 2216-0000 </p>
                     </div>
 
-                    <div className="textoFooter">
-                        <h2 className="h2-contacto">Contactos</h2>
-                        <p>bdbguatemala@gmail.com</p>
-                        <p>soportebdb@gmail.com</p>
-                    </div>
-
-                    <div className="textoFooter">
-                        <figure>
-                            <a href="#"><img className="trabajo" alt="Not Found" /></a>
-                        </figure>
+                    <div>
+                        <i className="fa fa-envelope"></i>
+                        <p><a href="mailto:support@company.com">info@debosques.gt</a></p>
                     </div>
 
                 </div>
 
-                <hr className="hr-footer" />
-                <div style={{ flex: '1' }}></div>
-                <div className="derechos">
-                    <b>Derechos reservados - &copy; Banco Del Bosque</b>
+                <div className="footer-right">
+
+                    <p className="footer-company-about">
+                        <span>Sobre Nosotros</span>
+                        Bienvenidos a la organización financiera más importante de Guatemala y una de las más grandes a nivel Centroamericano,
+
+                    </p>
+
+                    <div className="footer-icons">
+
+                        <a  href="https://www.facebook.com/kinal.gt/?locale=es_LA" target='_blank'><i className="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/_angel.s.m_/" target='_blank'><i className="fa fa-instagram"></i></a>
+
+                    </div>
+
                 </div>
+
             </footer>
         </>
     )

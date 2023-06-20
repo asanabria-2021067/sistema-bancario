@@ -20,8 +20,8 @@ export const UpdateProfile = ({ isOpen, onClose, profileEdit }) => {
             />
           </Modal.Body>
           <Modal.Footer>
-            <button className="btn btn-danger" onClick={onClose}>
-              Cerrar
+            <button className="btnCancel btn btn-danger" onClick={onClose}>
+              <i className="fa fa-cancel mx-4"></i>Cerrar
             </button>
           </Modal.Footer>
         </Modal>

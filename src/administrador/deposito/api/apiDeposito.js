@@ -42,7 +42,7 @@ export const createDeposito = async (noCuenta, dinero) => {
         Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "No se pudo agregar el evento.",
+            text: error.response.data.error,
         });
     }
 };

@@ -60,7 +60,7 @@ export const NavBar = () => {
           </ul>
         </div>
       </Navbar>
-      <nav className="navbar navbar-dark bg-dark">
+      <nav className="navbar" style={{backgroundColor : "#222222"}}>
         <div className="container justify-content-center">
           <div
             className="navbar-text"
@@ -71,6 +71,7 @@ export const NavBar = () => {
                 fontWeight: "bold",
                 flex: "1",
                 minWidth: "70px",
+                color: "#888"
               }}
             >
               Dólar:
@@ -89,6 +90,7 @@ export const NavBar = () => {
               style={{
                 flex: "1",
                 marginRight: "9px",
+                color: "#888"
               }}
             >
               |
@@ -108,6 +110,7 @@ export const NavBar = () => {
                 fontWeight: "bold",
                 flex: "1",
                 minWidth: "60px",
+                color: "#888"
               }}
             >
               Peso:
@@ -126,6 +129,7 @@ export const NavBar = () => {
               style={{
                 flex: "1",
                 marginRight: "9px",
+                color: "#888"
               }}
             >
               |
@@ -146,6 +150,7 @@ export const NavBar = () => {
                 marginRight: "5px",
                 flex: "1",
                 minWidth: "50px",
+                color: "#888"
               }}
             >
               Euro:
@@ -164,6 +169,7 @@ export const NavBar = () => {
               style={{
                 flex: "1",
                 marginRight: "9px",
+                color: "#888"
               }}
             >
               |

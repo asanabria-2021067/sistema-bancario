@@ -29,6 +29,7 @@ export const ListaBancos = () => {
         viewBanco();
     }, [
         // showModal
+        //Villeda Mula
     ]);
 
     const eliminar = async (id) => {
@@ -44,7 +45,7 @@ export const ListaBancos = () => {
             });
 
             if (confirmacion.isConfirmed) {
-                 await apiDeleteBanco(id);
+                await apiDeleteBanco(id);
                 setListaBancos(listaBancos.filter((c) => c._id !== id));
                 Swal.fire({
                     icon: "success",
@@ -62,26 +63,38 @@ export const ListaBancos = () => {
     return (
         <>
             <div style={{ marginLeft: " 10%" }}>
-                <div style={{ backgroundColor: " #f8f7f6", textAlign: "center", opacity: '100%', marginBottom: "20px" }}>
-                    <h1 style={{ opacity: "100%" }}>Lista de Bancos</h1>
+                <div
+                    style={{
+                        textAlign: "center",
+                        opacity: "100%",
+                        marginBottom: "20px",
+                        paddingTop: "20px",
+                        backgroundColor: "#004906",
+                        color: "#FFFFFF",
+                        paddingBottom: "1px"
+                    }}
+                >
+                    <h1 class="display-4 font-weight-bold mb-4" id="">Bancos</h1>
                 </div>
-                <Link
+               
+                    <div className="d-grid gap-2 col-6 mx-auto" style={{ marginBottom: "10px" }}>
+                    <Link
                     to="/agregarBancos"
                     className="nav-link "
                     aria-current="page"
 
                 >
-                    <div className="d-grid gap-2 col-6 mx-auto" style={{ marginBottom: "10px" }}>
                         <button className="btn btn-success btn-agregar" type="button" ><i className="fa fa-save mx-2"></i>Agregar Banco</button>
+                        </Link>
                     </div>
-                </Link>
+                
                 <div className="container-fluid">
                     <br />
                     {listaBancos.map((u) => {
                         return (
                             <div className="container-fluid" key={u._id}>
 
-                                <div className="card mb-2 card-hotel"  >
+                                <div className="card mb-2 card-hotel" style={{ zIndex: "-1"}}  >
                                     <div className="row g-0">
                                         <div className="col-md-3 image-container" >
                                             <img src={u.img} className="img-fluid  imagen-hotel " alt="..." />
@@ -102,7 +115,7 @@ export const ListaBancos = () => {
                                                                     onClick={() => handleOpenModal(t)}
                                                                     style={{ backgroundColor: "#F7DC6F", border: "none" }}
                                                                 >
-                                                                    Editar
+                                                                    <i className="fa fa-edit mx-2"></i>Editar
                                                                 </Button>
 
                                                             </div></td>

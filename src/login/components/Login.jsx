@@ -4,7 +4,9 @@ import { FooterLogin } from './FooterLogin';
 import Swal from "sweetalert2";
 import { apiLogin } from "../api/apiLogin";
 import * as yup from "yup";
-
+import { Button, Form, Modal } from 'react-bootstrap';
+import emailjs from "emailjs-com";
+import emailConfig from "../../Principal/components/emailHelper/emailConfig";
 export const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -58,6 +60,75 @@ export const Login = () => {
     password: yup.string().required("Ingrese su contraseña."),
   });
 
+// CORREO PARA CUENTA:
+const [showModal, setShowModal] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    telefono: "",
+    DPI: "",
+    ingresos: "",
+    trabajo: "",
+  });
+  console.log(formData);
+  const [selectedTitle, setSelectedTitle] = useState("");
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    sendEmail(formData);
+    setFormData({
+      name: "",
+      email: "",
+      telefono: "",
+      DPI: "",
+      ingresos: "",
+      trabajo: "",
+    });
+    setShowModal(false);
+  };
+
+  const sendEmail = (formData) => {
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      telefono: formData.telefono,
+      DPI: formData.DPI,
+      ingresos: formData.ingresos,
+      trabajo: formData.trabajo,
+      to_email: "dquinonez-2021045@kinal.edu.gt", // Dirección de correo electrónico de destino
+    };
+console.log(templateParams);
+    emailjs
+      .send(
+        emailConfig.serviceID,
+        emailConfig.templateID,
+        templateParams,
+        emailConfig.userID
+      )
+      .then((response) => {
+        console.log("Email sent!", response);
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+      });
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
+  const handleModalShow = (title) => {
+    setSelectedTitle(title);
+    setShowModal(true);
+  };
+
+
   return (
     <>
       <NavBarLogin />
@@ -100,7 +171,7 @@ export const Login = () => {
                     Entrar
                   </button>
                   <p className="mt-5 mb-3 text-muted">
-                    <a id="forgot-password" href="#">
+                    <a id="forgot-password" href="#" onClick={() => handleModalShow("Solicita tu usuario y cuenta :)")}>
                       ¿Aún no tienes una cuenta?
                     </a>
                   </p>
@@ -110,6 +181,84 @@ export const Login = () => {
           </div>
         </div>
       </div>
+      <Modal show={showModal} onHide={handleModalClose}>
+        <Modal.Header closeButton>
+          <Modal.Title  style={{textAlign: 'center'}}>{selectedTitle}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form onSubmit={handleSubmit}>
+            {/* Agrega los campos del formulario */}
+            <Form.Group controlId="formName">
+              <Form.Label>Nombre</Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formEmail">
+              <Form.Label>Correo</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formTelefono">
+              <Form.Label>Teléfono</Form.Label>
+              <Form.Control
+                type="tel"
+                name="telefono"
+                value={formData.telefono}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formIngresos">
+              <Form.Label>Ingresos Mensuales</Form.Label>
+              <Form.Control
+                type="number"
+                name="ingresos"
+                value={formData.ingresos}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formDPI">
+              <Form.Label>DPI o Identificacion</Form.Label>
+              <Form.Control
+                type="number"
+                name="DPI"
+                value={formData.DPI}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formTrabajo">
+              <Form.Label>Trabajo</Form.Label>
+              <Form.Control
+                type="text"
+                name="trabajo"
+                value={formData.trabajo}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Button className="btn mt-3" variant="success" type="submit">
+            <i className="fa fa-send mx-2"></i>Enviar
+            </Button>
+          </Form>
+        </Modal.Body>
+      </Modal>
     </>
   );
 };

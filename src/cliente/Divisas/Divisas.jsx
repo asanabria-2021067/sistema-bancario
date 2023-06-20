@@ -54,17 +54,29 @@ export const Divisas = () => {
   return (
     <>
       <NavBar />
-      <div className="container mt-4 mb-4">
-      <div className="title-container">
-          <h1 className="h1 mb-3">Conversor Divisas</h1>
+      <div
+        style={{
+          textAlign: "center",
+          opacity: "100%",
+          marginBottom: "20px",
+          backgroundColor: "#004906",
+          color: "#FFFFFF",
+          paddingBottom: "1px",
+          paddingTop: "15px"
+        }}
+      >
+          <h1 className="mb-3">Conversor Divisas</h1>
         </div>
+      <div className="container mt-4">
         <div className="currency-converter mt-2">
           <div className="input-group">
             <label className="labelDivisas">Moneda de conversión</label>
             <select
-              className="selectDivisas"
+              className="form-select"
+              id="selectDivisas"
               value={baseCurrency}
               onChange={handleBaseCurrencyChange}
+              placeholder="Seleccionar moneda"
             >
               <option value="">Seleccionar moneda</option>
               <option value="USD">USD</option>
@@ -104,9 +116,12 @@ export const Divisas = () => {
           <div className="input-group">
             <label className="labelDivisas">Moneda a convertir:</label>
             <select
-              className="selectDivisas"
+              className="form-select"
+              id="selectDivisas"
               value={targetCurrency}
               onChange={handleTargetCurrencyChange}
+              placeholder="Seleccionar moneda"
+
             >
               <option value="">Seleccionar moneda</option>
               <option value="USD">USD</option>
@@ -147,12 +162,16 @@ export const Divisas = () => {
             <label className="labelDivisas">Monto:</label>
             <input
               type="number"
-              className="selectDivisas"
+              className="form-control"
+              typeof="number"
+              placeholder="Ingrese el monto a convertir"
+              id="selectDivisas"
               value={amount}
               onChange={handleAmountChange}
               step="0.01"
             />
           </div>
+          <br />  
           {convertedAmount !== 0 && (
             <p className="conversion-result">
               Monto convertido: {amount} {baseCurrency} ={" "}

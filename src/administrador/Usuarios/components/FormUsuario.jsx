@@ -31,7 +31,7 @@ export const FormUsuario = ({ usuarioProp, titleButton, option }) => {
         setUsuario({ ...usuario, rol: event.target.value });
     };
     return (
-        <div style={{ marginLeft: " 10%" }}>
+        <div style={{ marginLeft: " 10%", marginBottom: "50px"}}>
 
 
             <form onSubmit={handleSubmit(crud)}>

@@ -136,7 +136,7 @@ export const Contacto = () => {
                             </p>
                         </Form.Group>
                         <Button variant="success" type="submit">
-                            Enviar
+                            <i className="fa fa-send mx-2"></i>Enviar
                         </Button>
                     </Form>
                 </div>

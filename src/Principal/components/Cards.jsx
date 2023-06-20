@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Button, Modal, Form } from "react-bootstrap";
 import emailjs from "emailjs-com";
 import emailConfig from "./emailHelper/emailConfig";
+
 export const Cards = () => {
   useEffect(() => {
     const handleScroll = () => {
@@ -85,7 +86,7 @@ export const Cards = () => {
         <br />
         <div className="container " id="serv" style={{ marginBottom: "20px" }}>
           <h2
-            className="text-center mb-5"
+            className="text-center mb-5" id="cards"
             style={{ color: "white", fontSize: "55px", fontStyle: "italic" }}
           >
             Servicios que ofrecemos
@@ -93,7 +94,7 @@ export const Cards = () => {
           <div className="row">
             {/* Card 1 */}
             <div className="col-md-6 mb-4">
-              <Card className="cardPrincipal shadow">
+              <Card className="cardPrincipal shadow" >
                 <div className="row no-gutters">
                   <div className="col-md-4">
                     <Card.Img
@@ -111,7 +112,7 @@ export const Cards = () => {
                       <Button
                         onClick={() => handleModalShow("Solicitar Informacion sobre Productos en Linea")}
                         variant="success">
-                        Solicitar Información
+                       <i className="fa fa-info-circle mx-2"></i> Solicitar Información
                       </Button>
                     </Card.Body>
                   </div>
@@ -140,7 +141,7 @@ export const Cards = () => {
                       <Button
                         onClick={() => handleModalShow("Solicitar Informacion sobre Prestamos ")}
                         variant="success">
-                        Solicitar Información
+                        <i className="fa fa-info-circle mx-2"></i>Solicitar Información
                       </Button>
 
                     </Card.Body>
@@ -169,7 +170,7 @@ export const Cards = () => {
                       <Button
                         onClick={() => handleModalShow("Solicitar Informacion sobre Creditos ")}
                         variant="success">
-                        Solicitar Información
+                        <i className="fa fa-info-circle mx-2"></i>Solicitar Información
                       </Button>
 
                     </Card.Body>
@@ -198,7 +199,7 @@ export const Cards = () => {
                       <Button
                         onClick={() => handleModalShow("Solicitar Informacion sobre Inversiones")}
                         variant="success">
-                        Solicitar Información
+                        <i className="fa fa-info-circle mx-2"></i>Solicitar Información
                       </Button>
                     </Card.Body>
                   </div>
@@ -228,7 +229,7 @@ export const Cards = () => {
                       <Button
                         onClick={() => handleModalShow("Solicitar Informacion sobre Traspasos en Linea")}
                         variant="success">
-                        Solicitar Información
+                        <i className="fa fa-info-circle mx-2"></i>Solicitar Información
                       </Button>
 
                     </Card.Body>
@@ -293,8 +294,8 @@ export const Cards = () => {
               />
             </Form.Group>
 
-            <Button variant="success" type="submit">
-              Enviar
+            <Button className="btn mt-2" variant="success" type="submit">
+            <i className="fa fa-send mx-2"></i> Enviar
             </Button>
           </Form>
         </Modal.Body>

@@ -61,32 +61,35 @@ export const ListaCreditos = () => {
         <div style={{ marginLeft: " 10%" }}>
             <div
                 style={{
-                    backgroundColor: " #f8f7f6",
                     textAlign: "center",
                     opacity: "100%",
                     marginBottom: "20px",
+                    paddingTop: "20px",
+                    backgroundColor: "#004906",
+                    color: "#FFFFFF",
+                    paddingBottom: "1px"
                 }}
             >
-                <h1 style={{ opacity: "100%" }}>Lista de Creditos</h1>
+                <h1 class="display-4 font-weight-bold mb-4" id="">Credito</h1>
             </div>
-            <Link to="/agregarCreditoAdmin    " className="nav-link " aria-current="page">
                 <div
                     className="d-grid gap-2 col-6 mx-auto"
                     style={{ marginBottom: "10px" }}
                 >
+            <Link to="/agregarCreditoAdmin    " className="nav-link " aria-current="page">
                     <button className="btn btn-success" type="button"
                         onClick={(event) => {
                             event.preventDefault();
                             navigate("/agregarCreditoAdmin");
                         }}
                     >
-                       <i className="fa fa-save mx-2"></i> Agregar Credito
+                        <i className="fa fa-save mx-2"></i> Agregar Credito
                     </button>
-                </div>
             </Link>
+                </div>
             <div className="container">
                 <Table striped bordered hover>
-                    <thead style={{ backgroundColor: "#FAD7A0" }} className="text-center">
+                    <thead style={{ backgroundColor: "#AEAEAE" }} className="text-center">
                         <tr>
                             <th>ID</th>
                             <th>Numero de Credito</th>
@@ -114,7 +117,7 @@ export const ListaCreditos = () => {
                                                     eliminar(c._id);
                                                 }}
                                             >
-                                               <i className="fa fa-trash mx-2"></i> Eliminar
+                                                <i className="fa fa-trash mx-2"></i> Eliminar
                                             </Button>
                                         </div>
                                     </td>
