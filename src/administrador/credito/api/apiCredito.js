@@ -1,6 +1,6 @@
 import axios from "axios";
 import Swal from "sweetalert2";
-const URL = "http://localhost:8080/api/credito/";
+const URL = "https://sistema-bancario-git-master-grupo4kinal.vercel.app/api/credito/";
 const token = localStorage.getItem("token");
 export const apiCredito = async () => {
     try {

@@ -2,7 +2,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 export const apiLogin = async (user, password) => {
     try {
-        const URL = 'http://localhost:8080/api/auth/login';
+        const URL = 'https://sistema-bancario-git-master-grupo4kinal.vercel.app/api/auth/login';
         const response = await axios.post(URL, {
             user,
             password

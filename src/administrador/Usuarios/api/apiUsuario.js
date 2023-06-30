@@ -1,7 +1,7 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 const token = localStorage.getItem("token");
-const URL = "http://localhost:8080/api/usuario/";
+const URL = "https://sistema-bancario-git-master-grupo4kinal.vercel.app/api/usuario/";
 
 export const apiUsuarioView = async () => {
     try {

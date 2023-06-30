@@ -1,6 +1,6 @@
 import axios from "axios";
 import Swal from "sweetalert2";
-const URL = "http://localhost:8080/api/deposito/";
+const URL = "https://sistema-bancario-git-master-grupo4kinal.vercel.app/api/deposito/";
 
 export const apiDeposito = async () => {
     try {

@@ -1,7 +1,7 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 const token = localStorage.getItem("token");
-const URL = "http://localhost:8080/api/transferencia/";
+const URL = "https://sistema-bancario-git-master-grupo4kinal.vercel.app/api/transferencia/";
 export const transferenciaEfectuada = async (transferencia) => {
     try {
       const response = await axios.post(`${URL}agregar/`, {

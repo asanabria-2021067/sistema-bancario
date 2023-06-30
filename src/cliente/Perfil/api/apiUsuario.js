@@ -1,6 +1,6 @@
 import axios from "axios";
 const token = localStorage.getItem("token");
-const URL = "http://localhost:8080/api/usuario/";
+const URL = "https://sistema-bancario-git-master-grupo4kinal.vercel.app/api/usuario/";
 
 export const apiMiUsuario = async() => {
     try {
