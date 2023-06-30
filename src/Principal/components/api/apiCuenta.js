@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const URL = 'https://sistema-bancario-ff2jivasf-grupo4kinal.vercel.app/api/tipoCuenta';
+const URL = 'https://sistema-bancario-git-master-grupo4kinal.vercel.app/api/tipoCuenta';
 
 //Mostrar Informacion 
 export const apiCuentaGet = async () => {
