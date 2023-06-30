@@ -144,6 +144,11 @@ export const Cuenta = () => {
               <i className="fa fa-upload mx-2"></i>Cuentas Mas Movimiento
             </div>
         </Link>
+        <Link to={`/cuentasConMenosMovimiento`} className="nav-link">
+            <div className="btn btn-primary btn-ver-historial" type="button">
+              <i className="fa fa-download mx-2"></i>Cuentas Menos Movimiento
+            </div>
+        </Link>
           </div>
       </div>
     </div>

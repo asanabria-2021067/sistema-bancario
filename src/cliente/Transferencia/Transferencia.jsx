@@ -25,8 +25,8 @@ export const Transferencia = () => {
   const [montoConvertido, setMontoConvertido] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [transferCompleted, setTransferCompleted] = useState(false)
-  
+  const [transferCompleted, setTransferCompleted] = useState(false);
+
   useEffect(() => {
     const viewMisCuentas = async () => {
       try {
@@ -112,19 +112,19 @@ export const Transferencia = () => {
   const handleTransfer = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-  
+
     try {
       Swal.fire({
         title: ` Transferencia a: ${receptor.nombreUsuario} en progreso`,
         html: `
-    <div>
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-      <hr/>
-      <p>transfiriendo Q${montoConvertido.toFixed(2)} a la cuenta:  ${transferenciaData.noCuenta}</p>
-    </div>
-  `,
+          <div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <hr/>
+            <p>transfiriendo Q${montoConvertido.toFixed(2)} a la cuenta:  ${transferenciaData.noCuenta}</p>
+          </div>
+        `,
         showConfirmButton: false,
         allowOutsideClick: false,
         didOpen: () => {
@@ -138,12 +138,12 @@ export const Transferencia = () => {
               }
               return prevProgress;
             });
-  
+
             if (parseInt(progressBar.style.width) > 80 && transferCompleted == false) {
               setTransferCompleted(true);
               const resultado = await transferenciaEfectuada(transferenciaData);
               console.log("Respuesta", resultado);
-  
+
               if (resultado) {
                 progressBar.style.width = `0%`;
                 Swal.fire({
@@ -154,7 +154,7 @@ export const Transferencia = () => {
                   confirmButtonText: "Ok",
                 }).then(() => {
                   window.location.href = "/comprobanteTransferencia";
-                  setTransferCompleted(false);
+                  
                 });
               } else {
                 progressBar.style.width = `0%`;
@@ -162,13 +162,16 @@ export const Transferencia = () => {
                   icon: "error",
                   title: "Error",
                   text: response.data.error,
+                }).then(() => {
+                  window.location.reload();
                 });
+                
               }
             }
           };
-  
+
           const interval = setInterval(increaseProgress, 1000);
-  
+
           return () => {
             clearInterval(interval);
           };
@@ -180,7 +183,6 @@ export const Transferencia = () => {
       setIsLoading(false);
     }
   };
-  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -204,6 +206,8 @@ export const Transferencia = () => {
   useEffect(() => {
     setIsLoading(false);
   }, []);
+
+  const isCurrencySelected = baseCurrency !== "";
 
   return (
     <>
@@ -268,6 +272,7 @@ export const Transferencia = () => {
                           name="baseCurrency"
                           value={baseCurrency}
                           onChange={handleBaseCurrencyChange}
+                          required
                         >
                           <option value="">Seleccionar moneda</option>
                           <option value="GTQ">GTQ</option>
@@ -289,14 +294,15 @@ export const Transferencia = () => {
                       name="concepto"
                       value={transferenciaData.concepto}
                       onChange={handleInputChange}
-                      required
+                      required={isCurrencySelected}
+                      disabled={!isCurrencySelected}
                     />
                   </div>
-                  
+
                   <button
                     className="btn btn-primary transferir"
                     type="submit"
-                    disabled={isLoading} // Deshabilitar el botón mientras se está cargando
+                    disabled={isLoading || !isCurrencySelected}
                   >
                     {isLoading ? (
                       <span>
@@ -324,12 +330,11 @@ export const Transferencia = () => {
                 <h5 className="card-title mt-4">
                   <strong>Usuario receptor:</strong> {receptor.nombreUsuario}
                 </h5>
-                <p className="card-text mb-4">
-                  <strong>Cuenta de destino:</strong> {transferenciaData.noCuenta}
+                <p className="card-text">
+                  <strong>Saldo:</strong> Q.{montoConvertido}
                 </p>
-                <p className="card-text mb-4">
-                  <strong> Monto a recibir: </strong>            
-                 {`${montoConvertido.toFixed(2)} GTQ`}
+                <p className="card-text">
+                  <strong>Cuenta de entrada:</strong> {transferenciaData.noCuenta}
                 </p>
               </div>
             </div>
@@ -339,3 +344,4 @@ export const Transferencia = () => {
     </>
   );
 };
+

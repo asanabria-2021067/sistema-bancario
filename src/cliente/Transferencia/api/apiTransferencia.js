@@ -18,6 +18,8 @@ export const transferenciaEfectuada = async (transferencia) => {
         icon: "error",
         title: "Error",
         text: error.response.data.error, // Mostrar el mensaje de error específico enviado desde el backend
+      }).then(() => {
+        window.location.reload();
       });
       return false;
     }

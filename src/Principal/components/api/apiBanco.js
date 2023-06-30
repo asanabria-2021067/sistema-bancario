@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const URL = 'http://localhost:8080/api/banco';
+const URL = 'https://sistema-bancario-ff2jivasf-grupo4kinal.vercel.app/api/banco';
 
 //Mostrar Informacion 
 export const apiBancosGet = async () => {

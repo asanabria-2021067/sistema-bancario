@@ -63,8 +63,8 @@ export const HistorialAdmin = () => {
                       </td>
                       <td>Transferencia Realizada</td>
                       <td style={{color: "red"}}> <i className="fa fa-money-bill mx-2"></i>Q.{transferencia.monto}</td>
-                      <td>{transferencia.emisor.nombreUsuario}</td>
-                      <td>{transferencia.receptor.nombreUsuario}</td>
+                      <td>{transferencia.emisor?.nombreUsuario}</td>
+                      <td>{transferencia.receptor?.nombreUsuario}</td>
                       <td>{transferencia.concepto}</td>
                     </tr>
                   ))}
@@ -78,8 +78,8 @@ export const HistorialAdmin = () => {
                       </td>
                       <td>Transferencia Recibida</td>
                       <td style={{color: "green"}}> <i className="fa fa-money-bill-trend-up mx-2"></i> Q.{transferenciaRecibida.monto}</td>
-                      <td>{transferenciaRecibida.emisor.nombreUsuario}</td>
-                      <td>{transferenciaRecibida.receptor.nombreUsuario}</td>
+                      <td>{transferenciaRecibida.emisor?.nombreUsuario}</td>
+                      <td>{transferenciaRecibida.receptor?.nombreUsuario}</td>
                       <td>{transferenciaRecibida.concepto}</td>
                     </tr>
                   ))}
@@ -100,7 +100,7 @@ export const HistorialAdmin = () => {
                       <td>Deposito</td>
                       <td style={{color: "green"}}> <i className="fa fa-money-bill-trend-up mx-2"></i> Q.{deposito.dinero}</td>
                       <td> N/A </td>
-                      <td>{deposito.receptorDeposito.nombreUsuario}</td>
+                      <td>{deposito.receptorDeposito?.nombreUsuario}</td>
                       <td> N/A </td>
                     </tr>
                   ))}
@@ -116,7 +116,7 @@ export const HistorialAdmin = () => {
                       <td>Compra</td>
                       <td style={{color: "red"}}>  <i className="fa fa-money-bill mx-2"></i>Q.{compra.dinero}</td>
                       <td> N/A </td>
-                      <td>{compra.comprador.nombreUsuario}</td>
+                      <td>{compra.comprador?.nombreUsuario}</td>
                       <td>{compra.informacion}</td>
                     </tr>
                   ))}

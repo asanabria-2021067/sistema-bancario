@@ -34,6 +34,7 @@ import { ListaBancos } from './administrador/bancos/components/ListaBancos'
 import { CreateBancos } from './administrador/bancos/components/CreateBancos'
 import { HistorialAdmin } from './administrador/Historial/HistorialAdmin'
 import { CuentasConMasMovimiento } from './administrador/Historial/CuentasConMasMovimiento'
+import { CuentasConMenosMovimiento } from './administrador/Historial/CuentasConMenosMovimiento'
 
 
 
@@ -83,6 +84,8 @@ function AppRouter() {
         <Route path="/listaBancos" element={isAdmin() ? <ListaBancos /> : <Navigate to="/" />} />
         <Route path="/agregarBancos" element={isAdmin() ? <CreateBancos/> : <Navigate to="/" />} />
         <Route path="/cuentasConMasMovimiento" element={isAdmin() ? <CuentasConMasMovimiento/> : <Navigate to="/" />} />
+        <Route path="/cuentasConMenosMovimiento" element={isAdmin() ? <CuentasConMenosMovimiento/> : <Navigate to="/" />} />
+
 
     </Routes>
     </>

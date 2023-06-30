@@ -83,10 +83,10 @@ export const ListaTransferencia = () => {
                             <tbody key={c._id} className="text-center">
                                 <tr>
                                     <td >{c._id}</td>
-                                    <td> {c.emisor.nombreUsuario}</td>
+                                    <td> {c.emisor?.nombreUsuario}</td>
                                     <td> {c.noCuentaEmisor}</td>
                                     <td> {c.noCuenta}</td>
-                                    <td> {c.receptor.nombreUsuario}</td>
+                                    <td> {c.receptor?.nombreUsuario}</td>
                                     <td> {c.monto}</td>
                                     <td> {c.concepto}</td>
                                     <td> {c.fecha}</td>

@@ -51,11 +51,17 @@ const sidebarNavItems = [
         section: 'listaBancos'
     },
     {
-        display: 'CuentasM',
+        display: 'Cuentas +',
         icon: <i className='bx bxs-wallet' ></i>,
         to: '/cuentasConMasMovimiento',
         section: 'cuentasConMasMovimiento'
-    }
+    },
+    {
+      display: 'Cuentas -',
+      icon: <i className='bx bxs-wallet' ></i>,
+      to: '/cuentasConMenosMovimiento',
+      section: 'cuentasConMenosMovimiento'
+  }
 ]
 
 

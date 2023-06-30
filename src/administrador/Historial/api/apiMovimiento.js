@@ -10,3 +10,13 @@ export const apiMisMovimientos = async() => {
         console.log(error);
       }
 };
+
+export const apiMenosMovimiento = async() => {
+  try {
+      const movimiento = await axios.get(`${URL}cuentasMenosMovimiento`);
+      console.log(movimiento.data);
+      return movimiento.data;
+    } catch (error) {
+      console.log(error);
+    }
+};

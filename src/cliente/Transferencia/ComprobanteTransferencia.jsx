@@ -61,16 +61,15 @@ export const ComprobanteTransferencia = () => {
   
       // Emisor
       const emisorImgWidth = 30; // Adjust the width as needed
-      const emisorImgX = margin + 50;
+      const emisorImgX = margin + 35;
       const emisorImgY = margin + 190;
   
-      const emisorImg = new Image();
-      emisorImg.src = transferencia.emisor?.img;
       doc.setFontSize(14);
+      doc.setFont("bold");
+      doc.text("DATOS EMISOR ", emisorImgX + emisorImgWidth, margin + 230);
       doc.setFont("normal");
-      doc.addImage(emisorImg, "PNG", emisorImgX, emisorImgY, emisorImgWidth, emisorImgWidth);
-      doc.text("Nombre: " + transferencia.emisor?.nombreUsuario, emisorImgX + emisorImgWidth + 5, margin + 195);
-doc.text("Cuenta: " + transferencia.noCuentaEmisor, emisorImgX + emisorImgWidth + 5, margin + 205);
+      doc.text("Nombre: " + transferencia.emisor?.nombreUsuario, emisorImgX + emisorImgWidth, margin + 240);
+doc.text("Cuenta: " + transferencia.noCuentaEmisor, emisorImgX + emisorImgWidth, margin + 250);
   
         doc.save("comprobante_pago.pdf");
       };
